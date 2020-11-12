@@ -1,8 +1,8 @@
 {
     "name" : "watering",
-    "appid" : "__UNI__FECC448",
+    "appid" : "",
     "description" : "蚂蚁森林，给小树苗浇水逐渐成长到大树的过程，所有参数都可配置（如水滴值，树的类型、动画等）",
-    "versionName" : "2.0.0",
+    "versionName" : "2.0.0.0",
     "versionCode" : "100",
     "transformPx" : false,
     /* 5+App特有相关 */
