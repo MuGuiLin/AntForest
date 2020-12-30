@@ -1,0 +1,80 @@
+<!--index.wxml-->
+<view class="page">
+  <view class="canvas">
+    <!-- 云朵位移 -->
+    <view class="cloud">
+      <view class="fly-1"></view>
+      <view class="fly-2"></view>
+      <view class="fly-3"></view>
+    </view>
+
+    <!-- 树、水滴值 -->
+    <view class="tree">
+      <view wx:for="{{rainArr}}" wx:for-index="index" wx:for-item="value" wx:key="*this" class="rain rain-{{stages}}" data-index="{{index}}" data-value="{{value}}" bindtap="rainFun">
+        {{value}}<text>g</text>
+      </view>
+      <image src="../../image/tree-{{stages}}.png" class="tree-{{stages}} {{treemove ? 'move-'+stages : ''}}" hover-class="none" bindtap="tree"></image>
+    </view>
+
+    <!-- 水壶、浇水动画 -->
+    <view class="kettle">
+      <view class="kettls" bindtap="water" hover-class="none"></view>
+      <view class="flasks {{watercss ? 'water' : ''}}" wx:if="{{watercss}}" ></view>
+      <view class="flasms" bindtap="water" wx:if="{{!watercss}}" hover-class="none"></view>
+      <view class="waters" wx:if="{{waterdom}}"></view>
+    </view>
+
+    <!-- 用户信息、水滴值 -->
+    <view class="sumup">
+      <view class="user">
+        <view class="cover">
+          <image src="{{info.avatar}}"></image>
+        </view>
+        <view class="info">
+          <view class="name">
+            <text class="name">{{info.name}}</text>
+            <view class="sex-{{info.sex}}"></view>
+          </view>
+          <view class="drop" hover-class="none">
+            <text>{{info.votes}}水滴</text>
+            <view class="icon">
+              <text class="plus {{pluss ? 'pluss': ''}}">+{{plussNum}}</text>
+            </view>
+          </view>
+        </view>
+      </view>
+
+      <!-- 树成长进度 -->
+      <view class="speed">
+        <view class="progress">
+          <image class="speed-1" src="../../image/speed-1{{1 == stages ? '-h' : ''}}.png"></image>
+          <image class="speed-2" src="../../image/speed-2{{2 == stages ? '-h' : ''}}.png"></image>
+          <image class="speed-3" src="../../image/speed-3{{3 == stages ? '-h' : ''}}.png"></image>
+        </view>
+      </view>
+    </view>
+  </view>
+
+  <view class="explain">
+    <view>功能概述：</view>
+    <view class="text">该插件样式主要是模仿蚂蚁森林，其中的数据都是可配的（完全可以自义定 或 从后端API获取），根据不同的数据(如用户信息、水滴值等)显示对应的动效。</view>
+    <view>操作说明：</view>
+    <view class="text">1、用水壶每浇水1次，水滴值向上+1。</view>
+    <view class="text">2、点击树上面的雨滴，水滴值 + 收取到的雨滴值。</view>
+    <view>成长说明：</view>
+    <view class="text">1、树的成长过程分为小树、中树、大树3个阶段。</view>
+    <view class="text">2、现默认值: 小树(水滴值在100以下)， 中树(水滴值在100 到 1000)， 大树(水滴值在1000以上)。</view>
+    <view class="text">3、树苗会在水滴值变化时会展示对应的动效 和 树的动效、大小等。</view>
+  </view>
+
+</view>
+
+<view class="container">
+  <view class="userinfo">
+    <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" type="primary" bindgetuserinfo="getUserInfo"> 获取头像昵称 </button>
+    <block wx:else>
+      <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
+      <text class="userinfo-nickname">{{userInfo.nickName}}</text>
+    </block>
+  </view>
+</view>
