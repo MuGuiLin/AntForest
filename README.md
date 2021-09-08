@@ -5,11 +5,10 @@
 
 源代码一共有两个版本（uni-app小程序 和 微信原生小程序），都是完整的工程代码，可直接在对应的开发环境中运行，所以把代码分别放在对应的目录中啦！
 
-蚂蚁森林 给小树浇水成长、给好友投票，加油，助力，仿支付宝-蚂蚁森林，给小树苗浇水逐渐成长到大树的过程，所有参数都可配置（如水滴值，树的类型、动画等）。
+蚂蚁森林 给小树浇水成长、给好友投票，加油，助力，仿支付宝-蚂蚁森林，给小树苗浇水逐渐成长到大树的过程，所有参数都可配置（如水滴值，树的类型、动画等）。 
 
-+ 作者：沐枫， 
 + 邮箱：muguilin@foxmail.com
-+ 网站：[关于我](http://www.muguilin.com:81)，[SCDN](https://blog.csdn.net/muguli2008)
++ 关于：[http://www.muguilin.com](http://www.muguilin.com)，[SCDN](https://blog.csdn.net/muguli2008)
 + uni-app插件市场：[https://ext.dcloud.net.cn/plugin?id=363](https://ext.dcloud.net.cn/plugin?id=363)
 
 ## 效果图：
